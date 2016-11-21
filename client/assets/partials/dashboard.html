@@ -1,0 +1,24 @@
+<h2>Welcome, {{currentUser.name}}</h2>
+<a href="/#/dashboard">Dashboard</a><div ng-controller="LoginController"> <input type= 'submit' value="Sign Out" ng-click="logout()">
+</div>
+
+<p> Create a bucket:</p>
+
+<form ng-submit = 'createbucket(user._id)'>
+  <input type='text' placeholder='title' ng-model='newBucket.title'>
+  <input type='text'placeholder='description' ng-model='newBucket.description'>
+    <select ng-model='newBucket._tagged'>
+      <option ng-repeat='x in Users' value="{{Users._id}}">{{x.name}}</option>
+    </select>
+  <input type='submit' value='Add a List'>
+</form>
+
+<p> Before I die I want to...</p>
+<form ng-repeat="bucket in buckets" >
+  <input type='checkbox' ng-click='bucket.addbucket()'>{{bucket.tagged.name}} - {{bucket.title}} {{bucket.description}} {{bucket.createdAt.slice(0,10)}}</input>
+</form>
+
+<p> List of users (Click to view Profile):</p>
+<div ng-repeat = "x in Users" ng-if="x.name != currentUser.name">
+  <a href = '#/user/{{x._id}}'>{{x.name}}</a>
+</div>

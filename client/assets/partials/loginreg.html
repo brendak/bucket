@@ -1,0 +1,16 @@
+<h3>Register</h3>
+<p ng-repeat='error in regErrors'>{{error.message}}</p>
+<form ng-submit = 'registerUser(newUser)'>
+	<input placeholder = "name" type = 'text' ng-model = 'newUser.name'>
+	<input placeholder = "email" type = 'text' ng-model = 'newUser.email'>
+	<input placeholder = "password" type = 'text' ng-model = 'newUser.password'>
+	<input placeholder = "password confirmation" type = 'text' ng-model = 'newUser.pw_confirm'>
+	<input type="submit" name="Register">
+</form>
+<p ng-repeat='error in loginErrors'>{{error.message}}</p>
+<h3>Login</h3>
+<form ng-submit = 'loginUser(user)'>
+	<input placeholder = "email" type = 'text' ng-model = 'user.email'>
+	<input placeholder = "password" type = 'text' ng-model = 'user.password'>
+	<input type="submit" name="Login">
+</form>

@@ -1,0 +1,17 @@
+<a href="/#/dashboard">Dashboard</a><div ng-controller="LoginController"> <input type= 'submit' value="Sign Out" ng-click="logout()">
+</div>
+
+<legend ng-controller = "DashboardController">
+<h1>{{currentUser.name}}'s Bucket List</h1>
+</legend>
+
+<p>Done</p>
+<form ng-repeat="x in Users">
+  <!-- //Add filter for status -->
+  <input type='checkbox'>{{x.tagged.name}} - {{x.title}} {{x.description}} {{x.createdAt.slice(0,10)}}</input>
+</form>
+<p>Pending</p>
+<form ng-repeat="x in Users">
+  <!-- //Add filter for status -->
+  <input type='checkbox'>{{x.tagged.name}} - {{x.title}} {{x.description}} {{x.createdAt.slice(0,10)}}</input>
+</form>

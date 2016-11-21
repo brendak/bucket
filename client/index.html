@@ -1,0 +1,28 @@
+<html ng-app="myApp">
+<head>
+  <style>
+    img{
+      height:200px;
+    }
+    td{
+      border-style:solid;
+    }
+  </style>
+<title>Bucket List</title>
+<script type="text/javascript" src="angular/angular.min.js"></script>
+<script type="text/javascript" src="angular/angular-route.min.js"></script>
+<script>
+  var myApp = angular.module('myApp', ['ngRoute']);
+</script>
+<script type="text/javascript" src = "assets/apps.js"></script>
+<script type="text/javascript" src = "assets/factories/loginFactory.js"></script>
+<script type="text/javascript" src = "assets/controllers/loginController.js"></script>
+<script type='text/javascript' src = 'assets/controllers/dashboardController.js'></script>
+<script type="text/javascript" src = "assets/controllers/showController.js"></script>
+
+</head>
+
+<body>
+  <div ng-view = "">
+  </div>
+</body>
